@@ -16,21 +16,23 @@ The sample consisted of 101 college students with an ADHD condition. Different t
 
 ## Tools
 
-    Git and GitHub
-    Jupyter Notebook
-    Python : main packages : pandas,MNE-BIDS, SNFpy based on previous markdown
-    Visualization packages via python
+
+ * Git and GitHub
+ * Jupyter Notebook
+ * Python : main packages : pandas,MNE-BIDS, SNFpy based on previous [markdown](https://github.com/rmarkello/snfpy)
+ * Visualization packages via python
+
 
 ## Deliverables
 
 At the end of this project, we will have:
 
-    A Jupyter notebook markdown describing thoroughly all the steps of our project
-    Python script of main analyses .
-    OSF project management
-    Complete published repository access to all commits and changes of our projects
+ - A Jupyter notebook markdown describing thoroughly all the steps of our project 
+ - Python script of main analyses .
+ - OSF project management 
+ - Complete published repository access to all commits and changes of our projects
 
-## Results
+  
 
 Coming soon !
 
