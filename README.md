@@ -69,3 +69,6 @@ As of may 29 2020; the jupyter notebook for data visualization is well advanced;
  * Git and Github
  * Jupyter Notebook
  * Debugging
+ 
+ 
+ Image source : https://www.pullmanward3.org/issue/publictransportationnetwork/ 
