@@ -62,6 +62,7 @@ At the end of this project, we will have:
 ## Progress overview
 
 As of may 26 2020; the data has been preprocessed and organized into pandas dataframes. 
+As of may 29 2020; the jupyter notebook for data visualization is well advanced; and we are working on our SNF.
 
 ## Tools I learned during this project
 
