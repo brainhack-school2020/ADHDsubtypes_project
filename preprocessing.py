@@ -43,3 +43,13 @@ def process_excel_file(path):
     df["id"]=path.split("/")[1].split(".")[0]
     df["electrode"]= df["electrode"].apply(lambda x: x.split('-')[0])#splitting for not a string
     return df
+
+def categorize_subtypes(inat, hyper, std_dev=5.72):# clinical std_dev as threshold for classification (std_dev, pearson)
+    if abs(inat-hyper)<std_dev:
+        return 'mixed'
+    else:
+        if inat>hyper:
+            return 'inat'
+        else:
+            return 'hyper'
+    
