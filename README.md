@@ -1,4 +1,4 @@
-# SNF_ADHDsubtypes_project
+# ADHDsubtypes_project
 
 This project will be conducted for BrainHack school 2020
 
