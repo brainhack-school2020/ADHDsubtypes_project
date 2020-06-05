@@ -2,6 +2,13 @@ import pandas as pd
 import numpy as np
 import glob
 import os
+import plotly.express as px
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.model_selection import permutation_test_score
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn import metrics
 
 def process_all_excel_files():
     df_full = pd.DataFrame()
@@ -66,4 +73,44 @@ def electrode_pools(electrode):
         return 'occipital'
     else:
         return 'N/A'
+
+def pca_features_df(df, pool):
+    eeg_trimmed = df.loc[df['electrode_pool'] == pool]
+    eeg_transp = pd.pivot_table(eeg_trimmed,values='fft_abs_power', index=['id'], columns=['brain_oscillation'])
+    return eeg_transp
+
+def pca_package(df_agg,pool, labels):
+    eeg_transp = pca_features_df(df_agg, pool)
+
     
+    standardized_data = StandardScaler().fit_transform(eeg_transp)#standardize data
+    
+    pca = PCA(n_components=2) #PCA
+    principalComponents = pca.fit_transform(eeg_transp)
+    principalDf = pd.DataFrame(data = principalComponents
+                , columns = ['principal component 1', 'principal component 2'], index=eeg_transp.index.values)
+    
+    graph_data = pd.merge(principalDf ,labels, left_index=True, right_index=True) #2D PCA visualization
+    graph_data["subtype"]= graph_data['subtype'].astype(str)
+    fig = px.scatter(graph_data, x='principal component 1', y='principal component 2', color='subtype')
+    
+    return principalDf, fig, pca.explained_variance_ratio_
+
+def knn_testing(principalDf, labels):
+    features = principalDf[['principal component 1','principal component 2']].to_numpy()
+    #create train, test sets
+    X_train, X_test, y_train, y_test = train_test_split(features, labels.to_numpy(), test_size=0.2, random_state=2)
+     #Create KNN Classifier
+    knn = KNeighborsClassifier(n_neighbors=2)
+    #Train the model using the training sets
+    knn.fit(X_train, y_train.ravel())
+    #Predict the response for test dataset
+    y_pred = knn.predict(X_test)
+    # Model Accuracy, how often is the classifier correct?
+    
+    accuracy = (metrics.accuracy_score(y_test, y_pred))
+    
+    score, permutation_scores, pvalue = permutation_test_score(
+    knn, X_train, y_train.ravel(), scoring="accuracy",  n_permutations=100, n_jobs=1)
+
+    return accuracy, score, pvalue
