@@ -61,7 +61,7 @@ At the end of this project, we will have:
 
 ### Week 3 deliverable: data visualization
 
-This [deliverable]()was done entirely as a team. Penelope developed the visualization for conners and behavioral data (interactive plots of distribution for each data type), and Beatrice developed the script for eeg data visualization (interactive plot with facets of spectral power distribution as well as an example of 2D visualization of PCA).
+This [deliverable](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Interactive_plots_deliverable.ipynb) was done entirely as a team. Penelope developed the visualization for conners and behavioral data (interactive plots of distribution for each data type), and Beatrice developed the script for eeg data visualization (interactive plot with facets of spectral power distribution as well as an example of 2D visualization of PCA).Topography plots were created jointly.
 
 
 ## Progress overview
