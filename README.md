@@ -1,6 +1,6 @@
 # ADHDsubtypes_project
 
-This project will be conducted for BrainHack school 2020
+This project will be conducted for BrainHack school 2020 by Béatrice De Koninck & Pénélope Pelland-Goulet
 
 
 ## Background
