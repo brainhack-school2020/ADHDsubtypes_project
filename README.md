@@ -5,11 +5,11 @@ This project will be conducted for BrainHack school 2020
 
 ## Background
 
-Attention deficit/hyperactivity disorder (ADHD) is one of the most common neurodevelopmental disorders among children and adolescents. It manifests itself through a variety of cognitive and behavioral symptoms, such as (but not limited to) hyperactivity, lack attention, impulsivity, lack of inhibition and diminished working memory. Subtype classification of ADHD has not reach consensus whithin the litterature and research on the correlates of ADHD subtypes show incoherent findings. The most common grouping of adhd subtypes (which is also the DSM categorization) are (1) inattentive, (2) impulsive/Hyperactive and (3) mixed. Those subtypes are for the majority based on criteria derived from behavioral and-self-report data and lack of neurophysiological assessment is prominent([Hegerl et al. 2016](https://pubmed.ncbi.nlm.nih.gov/27178310/); [Olbrich, Dinteren & Arns, 2015](https://pubmed.ncbi.nlm.nih.gov/26901357/)).
+Attention deficit/hyperactivity disorder (ADHD) is one of the most common neurodevelopmental disorders among children and adolescents. It manifests itself through a variety of cognitive and behavioral symptoms, such as (but not limited to) hyperactivity, lack attention, impulsivity, lack of inhibition and diminished working memory. Long-term follow-up studies revealed that in 40 to 60% of children with ADHD, the disorder persists into adulthood (American Psychiatric Association, 2012; Hechtman L, 1999; Sp et al. 2012; Klein RG et al. 2012). Subtype classification of ADHD has not reach consensus whithin the litterature and research on the correlates of ADHD subtypes show incoherent findings. The most common grouping of adhd subtypes (which is also the DSM categorization) are (1) inattentive, (2) impulsive/Hyperactive and (3) mixed. Those subtypes are for the majority based on criteria derived from behavioral and-self-report data and lack of neurophysiological assessment is prominent([Hegerl et al. 2016](https://pubmed.ncbi.nlm.nih.gov/27178310/); [Olbrich, Dinteren & Arns, 2015](https://pubmed.ncbi.nlm.nih.gov/26901357/)).
 
 ## Project definition
 
-This project will aim to investigate the detection of subtypes of ADHD from the possible associations between different types of measurements, pairing common behavioral and self-reporting measures to electrophysiological (EEG) data. To do so, k-nearest neighbor clustering and PCA analysis will be used to extract the valuable information from different types of data in a non-linear fashion. 87/)).
+This project will aim to investigate the detection of subtypes of ADHD from the possible associations between different types of measurements, pairing common behavioral and self-reporting measures to electrophysiological (EEG) data. More specifically, Principal components analysis (PCA) will be applied in order to achieve dimension reduction and k-nearest neighbor clustering will be used to predict the DSM ADHD subtypes. In addition, an investigation of the predictive capacity of our 3 data types will be made, as well as observations about the potential prediction of gender using our dataset.
 
 ## Data
 
@@ -20,7 +20,6 @@ For classification comparison, ADHD subtypes identified by the Conners questionn
 
 ID: participants ID
 
-Age: participants age
 
 Gender: women (n = 57), men (n = 39)
 Adhd subtype : hyperactive (n = 2), inattentive (n = 48), mixed (n = 46)
@@ -39,15 +38,14 @@ IVA-II : Behavioral test. Participants are presented with visual and auditive st
 
 Electroencephalography : 19 electrodes caps were used, positioned according to the 10-20 international system and referenced to both ear lobes. Recordings lasted 5 minutes, were participants were instructed to be as still as possible and to keep their eyes opened. The Mitsar System 201 and WinEEG (Mitast) softwares were used for recording. Test-retest and split-half correlations were higher than 0,9. Need more info on eeg analysis, waiting on a response from my PI.
 
-## Tools
-
+## The tools we learned through this project
 
  * Git and GitHub
- * Jupyter Notebook
- * Python : main packages : pandas,MNE-BIDS, SNFpy based on previous [markdown](https://github.com/rmarkello/snfpy)
- * Visualization packages via python
- * MNE
- * Seaborn
+ * Bash shell
+ * Ubuntu
+ * Jupyter Notebook/Jupyter Slides
+ * Python packages : pandas, SNFpy, scikit-learn, numpy, scipy, etc.
+ * Visualization packages (via python): seaborn, plotly, matplotlib, hytools, etc. 
 
 ## Deliverables
 
@@ -57,28 +55,19 @@ At the end of this project, we will have:
  - Python script of main analyses 
  - Complete published repository access to all commits and changes of our projects
  - An interactive platform to present the different data and analysis
- - Scalp plots of the eeg data
 
 ### Week 3 deliverable: data visualization
 
-This [deliverable](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Interactive_plots_deliverable.ipynb) was done entirely as a team. Penelope developed the visualization for conners and behavioral data (interactive plots of distribution for each data type), and Beatrice developed the script for eeg data visualization (interactive plot with facets of spectral power distribution as well as an example of 2D visualization of PCA).Topography plots were created jointly.
+This [deliverable](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Interactive_plots_deliverable.ipynb) was done entirely as a team. Penelope developed the visualization for Conners (cognitive data) and IVA-II (behavioral data) (interactive plots of distribution for each data type), and Beatrice developed the script for eeg data visualization (interactive plot with facets of spectral power distribution as well as an example of 2D visualization of PCA). Scalp plots were created jointly.
 
 
 ## Progress overview
 
 As of may 26 2020; the data has been preprocessed and organized into pandas dataframes. 
 As of may 29 2020; the jupyter notebook for data visualization is well advanced; and we are working on our SNF.
-AS of june 1st; we decided to let go of our SNF analysis and concentrate our efforts on clustering, PCA and visualization, as it seems far more appropriate to our data.
+As of june 1st; we decided to let go of our SNF analysis and concentrate our efforts on clustering, PCA and visualization, as it seems far more appropriate to our data.
+As of june 8th; we have completed our data analysis and data visualization, what is left to do before final submission is some reorganisation of our repository and simplification of our code.
 
-## Tools I learned during this project
 
- * Git and Github
- * Jupyter Notebook
- * Debugging
- * Hytools
- * Snfpy
- * Seaborn
- * Plotly
- 
  
 
