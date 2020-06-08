@@ -49,7 +49,6 @@ Electroencephalography : 19 electrodes caps were used, positioned according to t
  * MNE
  * Seaborn
 
-
 ## Deliverables
 
 At the end of this project, we will have:
@@ -60,7 +59,10 @@ At the end of this project, we will have:
  - An interactive platform to present the different data and analysis
  - Scalp plots of the eeg data
 
-  
+### Week 3 deliverable: data visualization
+
+This [deliverable]()was done entirely as a team. Penelope developed the visualization for conners and behavioral data (interactive plots of distribution for each data type), and Beatrice developed the script for eeg data visualization (interactive plot with facets of spectral power distribution as well as an example of 2D visualization of PCA).
+
 
 ## Progress overview
 
