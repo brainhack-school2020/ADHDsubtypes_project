@@ -11,6 +11,7 @@ from sklearn.neighbors import KNeighborsClassifier
 import matplotlib.pyplot as plt
 from sklearn import metrics
 
+
 def process_all_excel_files():
     df_full = pd.DataFrame()
     files = glob.glob('excel_files/*.xlsx')
@@ -247,3 +248,74 @@ def response_beha(change):
         g.layout.barmode = 'overlay'
         g.layout.xaxis.title = 'Subject iD'
         g.layout.yaxis.title = 'Behavioral Scores'
+
+        def createdf_by_gender(brain_oscillation, df_analysis):
+    df_oscillation = df_analysis.loc[df_analysis['brain_oscillation'] == brain_oscillation].reset_index(drop=True)
+    df1 = df_oscillation.loc[df_oscillation['Gender'] == 1].reset_index(drop=True)
+    df2 = df_oscillation.loc[df_oscillation['Gender'] == 2].reset_index(drop=True)
+    return df1, df2
+
+def createdf_by_subtype(brain_oscillation, df_analysis):
+    df_oscillation = df_analysis.loc[df_analysis['brain_oscillation'] == brain_oscillation].reset_index(drop=True)
+    df1 = df_oscillation.loc[df_oscillation['adhdtype'] == 1].reset_index(drop=True)
+    df2 = df_oscillation.loc[df_oscillation['adhdtype'] == 2].reset_index(drop=True)
+    return df1, df2
+
+
+def mann_whitney(df1, df2, pvals):
+    for i in range(df1.shape[1]): # for column i in df1 excluding column 0 (ids)
+        data1 = df1.iloc[: , i]  #data 1 = column i
+       #print('Column Contents : ', data1.values) # used if you want to verify that your columns are accurate
+    for i in range(df2.shape[1]): # for column i in df2 excluding column 0 (ids)
+        data2 = df2.iloc[: , i] #data 2 = column i
+       #print('Column Contents : ', data2.values)  # used if you want to verify that your columns are accurate
+        stat, p = mannwhitneyu(data1, data2) #mann-whitney test (non-param equivalent to 2 sampled t-test)
+        #print('Statistics=%.3f, p=%.3f' % (stat, p)) #use if you want to check all your test scores
+        pvals.append(p) # append each new p-value (1 for each column, so 19) into 1 array
+        #print(pvals) # if you want to see your p-values
+    return pvals
+
+
+# Setting ourselves for the array_topoplot function, we need to set titles and channels coordinates
+titles = ['Delta', 'Theta', 'Alpha', 'Beta', ]
+
+
+def array_topoplot(toplot, ch_xy, showtitle=True, titles=titles, savefig=False, figpath=None, vmin=0, vmax=30, cmap='jet', with_mask=False, masks=None, show=True):
+    #create fig
+    mask_params = dict(marker='o', markerfacecolor='w', markeredgecolor='k', linewidth=0, markersize=10)
+    fig, ax = plt.subplots(1,len(toplot), figsize=(20,10))
+   # mplcursors.cursor(hover=True)
+    for i, data in enumerate(toplot):
+        if with_mask == False:
+            image,_ = mne.viz.plot_topomap(data=data, pos=ch_xy, cmap=cmap, vmin=vmin, vmax=vmax, axes=ax[i], show=False, contours=None, extrapolate='box', outlines='head')
+        elif with_mask == True:
+            image,_ = mne.viz.plot_topomap(data=data, pos=ch_xy, cmap=cmap, vmin=vmin, vmax=vmax, axes=ax[i], show=False, contours=None, mask_params=mask_params, mask=masks[i], extrapolate='box', outlines='head')
+        #option for title
+        if showtitle == True:
+            ax[i].set_title(titles[i], fontdict={'fontsize': 20, 'fontweight': 'heavy'})
+    #add a colorbar at the end of the line (weird trick from https://www.martinos.org/mne/stable/auto_tutorials/stats-sensor-space/plot_stats_spatio_temporal_cluster_sensors.html#sphx-glr-auto-tutorials-stats-sensor-space-plot-stats-spatio-temporal-cluster-sensors-py)
+    divider = make_axes_locatable(ax[-1])
+    ax_colorbar = divider.append_axes('right', size='5%', pad=0.05)
+    plt.colorbar(image, cax=ax_colorbar)
+    ax_colorbar.tick_params(labelsize=14)
+    #save plot if specified
+    if savefig == True:
+        plt.savefig(figpath, dpi=300)
+    if show == True:
+        plt.show()
+        plt.close(fig=fig)
+    else:
+        plt.close(fig=fig)
+    return fig
+
+def prep_eeg_data(df):
+    df = df[['electrode', 'fft_abs_power']]
+    df = df.groupby('electrode')['fft_abs_power'].agg('mean')
+    return df
+
+def create_pval_mask(pvals, alpha=0.05):
+    mask = np.zeros((len(pvals),), dtype='bool')
+    for i, pval in enumerate(pvals):
+        if pval <= alpha:
+            mask[i] = True
+    return mask
