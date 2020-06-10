@@ -9,6 +9,10 @@ from sklearn.model_selection import permutation_test_score
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
+import scipy
+from scipy import stats
+from scipy.stats import mannwhitneyu
+from statsmodels.sandbox.stats.multicomp import multipletests
 
 def process_all_excel_files():
     df_full = pd.DataFrame()
@@ -113,4 +117,123 @@ def knn_testing(principalDf, labels):
     score, permutation_scores, pvalue = permutation_test_score(
     knn, X_train, y_train.ravel(), scoring="accuracy",  n_permutations=100, n_jobs=1)
 
+    confusion_matrix = metrics.confusion_matrix(y_test, y_pred, normalize='true')
+
+    return accuracy, score, pvalue, confusion_matrix
+
+def plot_matrix():
+    np.set_printoptions(precision=2)
+
+    # Plot non-normalized confusion matrix
+    titles_options = [("Confusion matrix, without normalization", None),
+                    ("Normalized confusion matrix", 'true')]
+    for title, normalize in titles_options:
+        disp = metrics.plot_confusion_matrix(knn, X_test, y_test,
+                                    display_labels=['1','2'],
+                                    cmap=plt.cm.Blues,
+                                    normalize=normalize)
+        disp.ax_.set_title(title)
+
+        print(title)
+        print(disp.confusion_matrix)
+
+    plt.show()
+
+def knn_testing_nopca(eeg_transp, labels):
+    features = eeg_transp.to_numpy()
+    #create train, test sets
+    X_train, X_test, y_train, y_test = train_test_split(features, labels.to_numpy(), test_size=0.2, random_state=2)
+     #Create KNN Classifier
+    knn = KNeighborsClassifier(n_neighbors=2)
+    #Train the model using the training sets
+    knn.fit(X_train, y_train.ravel())
+    #Predict the response for test dataset
+    y_pred = knn.predict(X_test)
+    # Model Accuracy, how often is the classifier correct?
+    
+    accuracy = (metrics.accuracy_score(y_test, y_pred))
+    
+    score, permutation_scores, pvalue = permutation_test_score(
+    knn, X_train, y_train.ravel(), scoring="accuracy",  n_permutations=100, n_jobs=1)
+
     return accuracy, score, pvalue
+
+
+
+def validate_con():
+    if Gender.value in df_conners['Gender'].unique() and adhdtype.value in df_conners['adhdtype'].unique():
+        return True
+    else:
+        return False
+
+def response_con(change):
+ if validate_con():
+    filter_list = [i and j for i, j in
+                      zip(df_conners['Gender'] == Gender.value, df_conners['adhdtype'] == adhdtype.value)]
+    temp_df = df_conners[filter_list]
+    x1 = temp_df['cIM']
+    x2 = temp_df['cHR']
+    x3 = temp_df['cIE']
+    x4 = temp_df['cSC']
+    with g.batch_update():
+        g.data[0].x = x1
+        g.data[1].x = x2
+        g.data[2].x = x3
+        g.data[3].x = x4
+        g.layout.barmode = 'overlay'
+        g.layout.xaxis.title = 'Subject iD'
+        g.layout.yaxis.title = 'Cognitive Scores'
+
+def validate_beha():
+    if Gender.value in df_behavioral['Gender'].unique() and adhdtype.value in df_behavioral['adhdtype'].unique():
+        return True
+    else:
+        return False
+
+def response_beha(change):
+ if validate_beha():
+    filter_list = [i and j for i, j in
+                      zip(df_behavioral['Gender'] == Gender.value, df_behavioral['adhdtype'] == adhdtype.value)]
+    temp_df = df_behavioral[filter_list]
+    x1 = temp_df['Aqtot']
+    x2 = temp_df['Aqaudi']
+    x3 = temp_df['Aqvis']
+    x4 = temp_df['RCQtot']
+    x5 = temp_df['RCQaudi']
+    x6 = temp_df['RCQvis']
+    with g.batch_update():
+        g.data[0].x = x1
+        g.data[1].x = x2
+        g.data[2].x = x3
+        g.data[3].x = x4
+        g.data[4].x = x5
+        g.data[5].x = x6
+        g.layout.barmode = 'overlay'
+        g.layout.xaxis.title = 'Subject iD'
+        g.layout.yaxis.title = 'Behavioral Scores'
+
+def createdf_by_gender(brain_oscillation, df_analysis):
+    df_oscillation = df_analysis.loc[df_analysis['brain_oscillation'] == brain_oscillation].reset_index(drop=True)
+    df1 = df_oscillation.loc[df_oscillation['Gender'] == 1].reset_index(drop=True)
+    df2 = df_oscillation.loc[df_oscillation['Gender'] == 2].reset_index(drop=True)
+    return df1, df2
+
+def createdf_by_subtype(brain_oscillation, df_analysis):
+    df_oscillation = df_analysis.loc[df_analysis['brain_oscillation'] == brain_oscillation].reset_index(drop=True)
+    df1 = df_oscillation.loc[df_oscillation['adhdtype'] == 1].reset_index(drop=True)
+    df2 = df_oscillation.loc[df_oscillation['adhdtype'] == 2].reset_index(drop=True)
+    return df1, df2
+
+
+def mann_whitney(df1, df2, pvals):
+    for i in range(df1.shape[1]): # for column i in df1 excluding column 0 (ids)
+        data1 = df1.iloc[: , i]  #data 1 = column i
+       #print('Column Contents : ', data1.values) # used if you want to verify that your columns are accurate
+    for i in range(df2.shape[1]): # for column i in df2 excluding column 0 (ids)
+        data2 = df2.iloc[: , i] #data 2 = column i
+       #print('Column Contents : ', data2.values)  # used if you want to verify that your columns are accurate
+        stat, p = mannwhitneyu(data1, data2) #mann-whitney test (non-param equivalent to 2 sampled t-test)
+        #print('Statistics=%.3f, p=%.3f' % (stat, p)) #use if you want to check all your test scores
+        pvals.append(p) # append each new p-value (1 for each column, so 19) into 1 array
+        #print(pvals) # if you want to see your p-values
+    return pvals
