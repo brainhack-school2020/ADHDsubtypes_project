@@ -60,7 +60,7 @@ At the end of this project, we will have:
 
 This [deliverable](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Interactive_plots_deliverable.ipynb) was done entirely as a team. Penelope developed the visualization for Conners (cognitive data) and IVA-II (behavioral data) (interactive plots of distribution for each data type), and Beatrice developed the script for eeg data visualization (interactive plot with facets of spectral power distribution as well as an example of 2D visualization of PCA). Scalp plots were created jointly.
 
-Please make sure to see the	requirements_week3deliverable.txt, to pull Data file (with all the necessary files) and follow instruction in the notebook (linked)
+Please make sure to see the	requirements_week3deliverable.txt, to pull Data file (with all the necessary files) and follow instruction in the notebook (linked). the excel_files folder has to be moved from the Data folder to the same directory as the notebook, in order for the path to stay the same. 
 
 
 ## Progress overview
