@@ -65,10 +65,13 @@ Please make sure to see the	requirements_week3deliverable.txt, to pull Data file
 
 ## Progress overview
 
-As of may 26 2020; the data has been preprocessed and organized into pandas dataframes. 
-As of may 29 2020; the jupyter notebook for data visualization is well advanced; and we are working on our SNF.
-As of june 1st; we decided to let go of our SNF analysis and concentrate our efforts on clustering, PCA and visualization, as it seems far more appropriate to our data.
-As of june 8th; we have completed our data analysis and data visualization, what is left to do before final submission is some reorganisation of our repository and simplification of our code.
+* As of may 26 2020; the data has been preprocessed and organized into pandas dataframes. 
+* As of may 29 2020; the jupyter notebook for data visualization is well advanced; and we are working on our SNF.
+* As of june 1st; we decided to let go of our SNF analysis and concentrate our efforts on clustering, PCA and visualization,    as it seems far more appropriate to our data.
+* As of june 8th; we have completed our data analysis and data visualization, what is left to do before final submission is some reorganisation of our repository and simplification of our code.
+* Submission week : Deliverables :
+* data_exploration.ipynb: jupyter notebook of all data wrangling, some interactive data visualization, and complete PCAs, KNN analyses (with comparisons of KNN without PCAs) on all 3 types of data
+* Visualization.ipynb : jupyter notebook of all the visualisation made for all 3 datasets, plus topography maps and a section with topography maps with significance masks for electrode comparisons. 
 
 
  
