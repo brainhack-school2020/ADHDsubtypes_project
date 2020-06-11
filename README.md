@@ -1,6 +1,7 @@
 
 
 # ADHDsubtypes_project
+### By Béatrice de Koninck & Pénélope Pelland-Goulet
 
 ![](images/eeg_general.PNG)
 
