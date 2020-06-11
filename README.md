@@ -103,7 +103,7 @@ Finally, we also tried predicting sex according to Eeg distribution. This classi
 | :-----:|:----------------------------:| :-------------------------:|
 | EEG    | Acccuracy = 87.4%, p = 0.009 | Accuracy: 85.79%, p = 0.009|
 
-Here is the confusion matrix for the classification of gender (using PCA):
+Here is the confusion matrix for the classification of sex (using PCA):
 
 ![](images/CONF_MATRIC_GENDER_EEG.PNG)
 
