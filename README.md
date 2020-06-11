@@ -101,7 +101,8 @@ Here is the confusion matrix for the classification of gender (using PCA):
 
  * Git and GitHub
  * Bash shell
- * Ubuntu
+ * Dimension reduction via PCA
+ * Machine learning ( KNN classification)
  * Jupyter Notebook/Jupyter Slides
  * Python packages : pandas, SNFpy, scikit-learn, numpy, scipy, etc.
  * Visualization packages (via python): seaborn, plotly, matplotlib, hytools, etc. 
