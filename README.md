@@ -38,6 +38,34 @@ IVA-II : Behavioral test. Participants are presented with visual and auditive st
 
 Electroencephalography : 19 electrodes caps were used, positioned according to the 10-20 international system and referenced to both ear lobes. Recordings lasted 5 minutes, were participants were instructed to be as still as possible and to keep their eyes opened. The Mitsar System 201 and WinEEG (Mitast) softwares were used for recording. Test-retest and split-half correlations were higher than 0,9.
 
+
+## Results
+
+PCA analysis and KNN classification yielded interesting results. First, we compared the performance of a k-nearest neighbors clasification using PCA as features versus using the data without dimension reduction. Here are the results:
+First, we tried to predict ADHD subtype (inattentive vs combined) using eeg data, separating pools of electrodes. None of the classifications were statistically higher than chance level (50%).
+
+| Electrode pool  | Knn result using PCA       | Knn result without PCA     |
+| :--------------:|:--------------------------:| :-------------------------:|
+| Central         | Acccuracy = 47%, p = 0.26  | Accuracy: 52.6%, p = 0.3   |
+| Temporal        | Accuracy = 36%, p = 0.54   | Accuracy = 42.1%, p = 0.16 |
+| Occipital       | Accuracy = 47.4%, p = 0.861| Accuracy = 52.6%, p = 0.624|
+| Frontal         | Accuracy = 36.84%, p = 0.74| Accuracy = 26.3%, p = 0.89 |
+| Parietal        | Accuracy = 52.6%, p = 0.94 | Accuracy = 36.8%, p = 0.396|
+
+Second, we tried to predict ADHD subtype again, this time using Conners scale (cognitive data) and IVA-II (behavioral data) separately, with and without PCA. Conners scale could predict ADHD subtype with a precision of 73,68%, with or without PCA. IVA-II classificaiton was not significally higher than chance level (50%).
+
+| Feature       | Knn result using PCA         | Knn result without PCA     |
+| :------------:|:----------------------------:| :-------------------------:|
+| Conners Scale | Acccuracy = 73.68%, p = 0.009| Accuracy: 73.68%, p = 0.019|
+| IVA-II        | Accuracy = 52.6%, p = 0.67   | Accuracy = 52.6%, p = 0.76 |
+
+Finally, we also tried predicting gender according to Eeg distribution. This classification yielded the best results, with and without PCA.
+
+| Feature| Knn result using PCA         | Knn result without PCA     |
+| :-----:|:----------------------------:| :-------------------------:|
+| EEG    | Acccuracy = 87.4%, p = 0.009 | Accuracy: 85.79%, p = 0.009|
+
+
 ## The tools we learned through this project
 
  * Git and GitHub
