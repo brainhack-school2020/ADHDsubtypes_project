@@ -17,16 +17,23 @@ Using a multimodal dataset comprised of EEG data as well as self-reported sympto
 
 ## Installation
 In order to reproduce those same analysis on your own computer, you will need to follow these steps:
-1. Clone the repo to your computer: git clone https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project.git
-2. You will need Python and Jupyter Notebook. If you do not already use Jupyter Notebooks and Python, you can download both of them, as well as other useful tools by installing [Anaconda Navigator](https://docs.anaconda.com/anaconda/install/)
-3. Install the packages listed in the [requirements.txt](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/requirement.txt) file. 
-4. If you are on Windows, you will need to edit a single line from the [preprocessing.py](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/preprocessing.py) file. On line 51, you have to replace df["id"]=path.split("/")[1].split(".")[0] by df["id"]=path.split("\\")[1].split(".")[0]
+1. Clone the repo to your computer: git clone https://github.com/brainhack-school2020/ADHDsubtypes_project.git
+2. You will need Python and Jupyter Notebook. 
+* Python  *(this was based on 3.7.6 version and used via *miniconda*). For Python installation tutorials, refer to either [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) or [pip](https://docs.python.org/3/using/index.html)
+* Jupyter NoteBook *[Installation documentation](https://jupyter.org/install)
+3. Install the packages listed in the [requirements.txt](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/requirement.txt) file. 
+To install the packages required via conda follow these instructions based on this [Documentation](https://docs.anaconda.com/anaconda/user-guide/tasks/install-packages/). 
+For installing packages rather via pip you can refer to [this](https://packaging.python.org/tutorials/installing-packages/) instead.
+For pandas : ```conda install pandas``` 
+*(For a specific version install for any package via conda add ```=(version)```)*, for example : ```conda install pandas=1.0.3 ``` 
+For scipy :  ```conda install scipy```
+4. If you are on Windows, you will need to edit a single line from the [preprocessing.py](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/preprocessing.py) file. On line 51, you have to replace df["id"]=path.split("/")[1].split(".")[0] by df["id"]=path.split("\\")[1].split(".")[0]
 5. You can start running the notebooks! We suggest exploring them in this order:
-  a) [pre_preprocessing_analysis.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/pre_preprocessing_analysis.ipynb)
-  b) [Viz.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Viz.ipynb)
-  c) [Scalp_Plots.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Scalp_Plots.ipynb)
-  d) [main_analyses.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/main_analyses.ipynb)
-  e) If you are short on time, you can skip steps b, c and d, and only vew [Interactive_plots_deliverable.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Interactive_plots_deliverable.ipynb), which is a shortened version of our project, focusing on interactive data visualization. 
+  a) [pre_preprocessing_analysis.ipynb](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/pre_preprocessing_analysis.ipynb)
+  b) [Viz.ipynb](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/Viz.ipynb)
+  c) [Scalp_Plots.ipynb](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/Scalp_Plots.ipynb)
+  d) [main_analyses.ipynb](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/main_analyses.ipynb)
+  e) If you are short on time, you can skip steps b, c and d, and only vew [Interactive_plots_deliverable.ipynb](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/Interactive_plots_deliverable.ipynb), which is a shortened version of our project, focusing on interactive data visualization. 
 
 ## Background
 
