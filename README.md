@@ -1,5 +1,7 @@
 # ADHDsubtypes_project
 
+![](images/eeg_general.PNG)
+
 This project was conducted for BrainHack school 2020 by Béatrice De Koninck & Pénélope Pelland-Goulet.
 
 ## Background
@@ -45,16 +47,13 @@ Then, data description and visualization was done in the [Viz.ipynb](https://git
 
 Then, eeg scalp plots were created in the [Scalp_Plots.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Scalp_Plots.ipynb), where statistical tests were also computed on eeg data.
 
-Finally, the main analysis can be found in the [data_exploration.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/data_exploration.ipynb) file. They consist of Principal Component Analysis, a dimension reduction technique that was applied to the 3 types of data in order to extract possible pertinent features that were later used in the classification of ADHD subtypes and gender. Classification was made using a k-nearest neighbors method, with and without PCA, in order to investigate the effect of PCAs on classification of gender and ADHD.
+Finally, the main analysis can be found in the [main_analyses.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/main_analyses.ipynb) file. They consist of Principal Component Analysis, a dimension reduction technique that was applied to the 3 types of data in order to extract possible pertinent features that were later used in the classification of ADHD subtypes and gender. Classification was made using a k-nearest neighbors method, with and without PCA, in order to investigate the effect of PCAs on classification of gender and ADHD.
 
 
 
 ## Results
 
-Here are the scalp plots for our whole sample:
-![](images/eeg_general.PNG)
-
-While this is a good first start, we were more interested in gender differences and ADHD subtype differences.White electrodes indicate the significant differences (computed via Mann-Whitney non parametric test and corrected with Bonferroni).
+We were interested in gender differences and ADHD subtype differences, so we started by plotting their scalp distribution. White electrodes indicate the significant differences (computed via Mann-Whitney non parametric test and corrected with Bonferroni).
 
 Here is the scalp plot showing gender differences. 
 
