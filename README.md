@@ -1,6 +1,6 @@
-# ADHDsubtypes_project
-
 ![](images/eeg_general.PNG)
+
+# ADHDsubtypes_project
 
 This project was conducted for BrainHack school 2020 by Béatrice De Koninck & Pénélope Pelland-Goulet.
 
