@@ -138,6 +138,12 @@ Please make sure to see the	[requirements_week3deliverable.txt](https://github.c
 * [requirement.txt](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/requirement.txt) : libraries required for this project
 
 
-
- 
+## References
+1. [Galarnyk, M. (2017, December 4th). PCA using Python (scikit-learn). Retrieved from https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60](https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60)
+2. [La Malfa, G., Lassi, S., Bertelli, M., Pallanti, S., Albertini, G. (2008) Detecting attention-deficit/hyperactivity disorder (ADHD) in adults with intellectual disability The use of Conners' Adult ADHD Rating Scales (CAARS). Res Dev Disabil.29(2):158‐164. doi:10.1016/j.ridd.2007.02.002](https://www.sciencedirect.com/science/article/pii/S0891422207000200?via%3Dihub)
+3. [Navlani, A. (2018, August 2nd). KNN Classification using Scikit-learn. Retrieved from https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn](https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn)
+4. [Sandford, J. A., & Turner, A. (2000). Integrated visual and auditory continuous performance test manual. Richmond, VA: Brain Train.](https://www.braintrain.com/iva2/) 
+3. [Sharma, A. (2020, January 1st). Principal Component Analysis in Python. Retrieved from https://www.datacamp.com/community/tutorials/principal-component-analysis-in-python](https://www.datacamp.com/community/tutorials/principal-component-analysis-in-python)
+4. [Wilens, T. E., & Spencer, T. J. (2010). Understanding attention-deficit/hyperactivity disorder from childhood to adulthood. Postgraduate medicine, 122(5), 97–109. https://doi.org/10.3810/pgm.2010.09.2206](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3724232/)
+4. [Volkow, N. D., & Swanson, J. M. (2013). Clinical practice: Adult attention deficit-hyperactivity disorder. The New England journal of medicine, 369(20), 1935–1944. https://doi.org/10.1056/NEJMcp1212625](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4827421/)
 
