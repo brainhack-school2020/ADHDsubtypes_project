@@ -43,17 +43,17 @@ Electroencephalography : 19 electrodes caps were used, positioned according to t
 ## Results
 
 Here are the scalp plots for our whole sample:
-![](images/eeg_general.png)
+![](images/eeg_general.PNG)
 
 While this is a good first start, we were more interested in gender differences and ADHD subtype differences.White electrodes indicate the significant differences (computed via Mann-Whitney non parametric test and corrected with Bonferroni).
 
 Here is the scalp plot showing gender differences. 
 
-![](images/eeg_gender.png)
+![](images/eeg_gender.PNG)
 
 And here are the scalp plots showing subtype differences.
 
-![](images/eeg_subtype.png)
+![](images/eeg_subtype.PNG)
 
 PCA analysis and KNN classification yielded interesting results. First, we compared the performance of a k-nearest neighbors clasification using PCA as features versus using the data without dimension reduction. Here are the results:
 First, we tried to predict ADHD subtype (inattentive vs combined) using eeg data, separating pools of electrodes. None of the classifications were statistically higher than chance level (50%).
