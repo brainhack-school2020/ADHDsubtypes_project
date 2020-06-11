@@ -1,7 +1,6 @@
 # ADHDsubtypes_project
 
-This project will be conducted for BrainHack school 2020 by Béatrice De Koninck & Pénélope Pelland-Goulet
-
+This project was conducted for BrainHack school 2020 by Béatrice De Koninck & Pénélope Pelland-Goulet.
 
 ## Background
 
@@ -10,6 +9,8 @@ Attention deficit/hyperactivity disorder (ADHD) is one of the most common neurod
 ## Project definition
 
 This project will aim to investigate the detection of subtypes of ADHD from the possible associations between different types of measurements, pairing common behavioral and self-reporting measures to electrophysiological (EEG) data. More specifically, Principal components analysis (PCA) will be applied in order to achieve dimension reduction and k-nearest neighbor clustering will be used to predict the DSM ADHD subtypes. In addition, an investigation of the predictive capacity of our 3 data types will be made, as well as observations about the potential prediction of gender using our dataset.
+
+As well as learning all the tools and analysis that are listed at the bottom of this README, one of our goals to create notebooks that can be easily understood and modified by people with little coding experience. In order to do this, we included very specific instructions and comments in our notebooks, educating the viewer on the code, the functions, the plots, and the results.
 
 ## Data
 
@@ -41,6 +42,19 @@ Electroencephalography : 19 electrodes caps were used, positioned according to t
 
 ## Results
 
+Here are the scalp plots for our whole sample:
+![](images/eeg_general.png)
+
+While this is a good first start, we were more interested in gender differences and ADHD subtype differences.White electrodes indicate the significant differences (computed via Mann-Whitney non parametric test and corrected with Bonferroni).
+
+Here is the scalp plot showing gender differences. 
+
+![](images/eeg_gender.png)
+
+And here are the scalp plots showing subtype differences.
+
+![](images/eeg_subtype.png)
+
 PCA analysis and KNN classification yielded interesting results. First, we compared the performance of a k-nearest neighbors clasification using PCA as features versus using the data without dimension reduction. Here are the results:
 First, we tried to predict ADHD subtype (inattentive vs combined) using eeg data, separating pools of electrodes. None of the classifications were statistically higher than chance level (50%).
 
@@ -51,6 +65,9 @@ First, we tried to predict ADHD subtype (inattentive vs combined) using eeg data
 | Occipital       | Accuracy = 47.4%, p = 0.861| Accuracy = 52.6%, p = 0.624|
 | Frontal         | Accuracy = 36.84%, p = 0.74| Accuracy = 26.3%, p = 0.89 |
 | Parietal        | Accuracy = 52.6%, p = 0.94 | Accuracy = 36.8%, p = 0.396|
+
+These results might not be surprising, considering PCA resulted in very similar principal components which are hard to distinguish, for all electrode pools.
+![](images/PCA_FRONTAL.png)
 
 Second, we tried to predict ADHD subtype again, this time using Conners scale (cognitive data) and IVA-II (behavioral data) separately, with and without PCA. Conners scale could predict ADHD subtype with a precision of 73,68%, with or without PCA. IVA-II classificaiton was not significally higher than chance level (50%).
 
@@ -64,6 +81,10 @@ Finally, we also tried predicting gender according to Eeg distribution. This cla
 | Feature| Knn result using PCA         | Knn result without PCA     |
 | :-----:|:----------------------------:| :-------------------------:|
 | EEG    | Acccuracy = 87.4%, p = 0.009 | Accuracy: 85.79%, p = 0.009|
+
+Here is the confusion matrix for the classification of gender (using PCA):
+
+![](images/CONF_MATRIC_GENDER_EEG.PNG)
 
 
 ## The tools we learned through this project
