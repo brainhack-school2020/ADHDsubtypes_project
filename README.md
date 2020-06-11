@@ -6,6 +6,19 @@
 
 This project was conducted for BrainHack school 2020 by Béatrice De Koninck & Pénélope Pelland-Goulet.
 
+As well as learning all the tools and analysis that are listed at the bottom of this README, one of our goals was to create notebooks that are easy to use, and that can be easily understood and modified by people with little coding experience. In order to do this, we included very specific and detailed instructions and comments in our notebooks, educating the viewer on the code, the functions, the plots, and the results.
+In order to reproduce those same analysis on your own computer, you will need to follow these steps:
+1. Clone the repo to your computer: git clone https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project.git
+2. You will need Python and Jupyter Notebook. If you do not already use Jupyter Notebooks and Python, you can download both of them, as well as other useful tools by installing [Anaconda Navigator](https://docs.anaconda.com/anaconda/install/)
+3. Install the packages listed in the [requirements.txt](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/requirement.txt) file. 
+4. If you are on Windows, you will need to edit a single line from the [preprocessing.py](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/preprocessing.py) file. On line 51, you have to replace df["id"]=path.split("/")[1].split(".")[0] by df["id"]=path.split("\\")[1].split(".")[0]
+5. You can start running the notebooks! We suggest exploring them in this order:
+  a) [pre_preprocessing_analysis.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/pre_preprocessing_analysis.ipynb)
+  b) [Viz.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Viz.ipynb)
+  c) [Scalp_Plots.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Scalp_Plots.ipynb)
+  d) [main_analyses.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/main_analyses.ipynb)
+  e) If you are short on time, you can skip steps b, c and d, and only vew [Interactive_plots_deliverable.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Interactive_plots_deliverable.ipynb), which is a shortened version of our project, focusing on interactive data visualization. 
+
 ## Background
 
 Attention deficit/hyperactivity disorder (ADHD) is one of the most common neurodevelopmental disorders among children and adolescents ([Volkow, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4827421/)). It manifests itself through a variety of cognitive and behavioral symptoms, such as (but not limited to) hyperactivity, lack attention, impulsivity, lack of inhibition and diminished working memory ([Wilens, 2010](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3724232/)). Long-term follow-up studies revealed that in 40 to 60% of children with ADHD, the disorder persists into adulthood ([American Psychiatric Association, 2012](https://psycnet.apa.org/fulltext/2011-28648-001.html); [Hechtman, L., 1999](https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1098-2779(1999)5:3%3C243::AID-MRDD11%3E3.0.CO;2-D); [Klein, RG et al. 2012](https://pubmed.ncbi.nlm.nih.gov/23070149/)). Subtype classification of ADHD has not reach consensus whithin the litterature and research on the correlates of ADHD subtypes show incoherent findings. The most common grouping of adhd subtypes (which is also the DSM categorization) are (1) inattentive, (2) impulsive/Hyperactive and (3) mixed. Those subtypes are for the majority based on criteria derived from behavioral and-self-report data and lack of neurophysiological assessment is prominent([Hegerl et al. 2016](https://pubmed.ncbi.nlm.nih.gov/27178310/); [Olbrich, Dinteren & Arns, 2015](https://pubmed.ncbi.nlm.nih.gov/26901357/)).
@@ -13,8 +26,6 @@ Attention deficit/hyperactivity disorder (ADHD) is one of the most common neurod
 ## Project definition
 
 This project will aim to investigate the prediction potential of subtypes of ADHD between different types of measurements, those being behavioral measures, self-reporting measures and electrophysiological (EEG) data. More specifically, Principal components analysis (PCA) will be applied in order to achieve dimension reduction and k-nearest neighbor clustering will be used to predict the DSM ADHD subtypes according to each data type. An investigation of the predictive capacity of our 3 data types will be made, as well as observations about the potential prediction of gender using our dataset. For eeg data, an supplementary investigation will be conducted to compare prediction potential of ADHD subtypes according to electrode pools (paired according to brain regions) for brain oscillations of interest (measuring sepctral power). 
-
-As well as learning all the tools and analysis that are listed at the bottom of this README, one of our goals was to create notebooks that are easy to use, and that can be easily understood and modified by people with little coding experience. In order to do this, we included very specific and detailed instructions and comments in our notebooks, educating the viewer on the code, the functions, the plots, and the results.
 
 ## Data
 
