@@ -12,7 +12,7 @@ Attention deficit/hyperactivity disorder (ADHD) is one of the most common neurod
 
 This project will aim to investigate the detection of subtypes of ADHD from the possible associations between different types of measurements, pairing common behavioral and self-reporting measures to electrophysiological (EEG) data. More specifically, Principal components analysis (PCA) will be applied in order to achieve dimension reduction and k-nearest neighbor clustering will be used to predict the DSM ADHD subtypes. In addition, an investigation of the predictive capacity of our 3 data types will be made, as well as observations about the potential prediction of gender using our dataset.
 
-As well as learning all the tools and analysis that are listed at the bottom of this README, one of our goals to create notebooks that can be easily understood and modified by people with little coding experience. In order to do this, we included very specific instructions and comments in our notebooks, educating the viewer on the code, the functions, the plots, and the results.
+As well as learning all the tools and analysis that are listed at the bottom of this README, one of our goals was to create notebooks that is easy to use, and that can be easily understood and modified by people with little coding experience. In order to do this, we included very specific and detailed instructions and comments in our notebooks, educating the viewer on the code, the functions, the plots, and the results.
 
 ## Data
 
@@ -21,11 +21,10 @@ For classification comparison, ADHD subtypes identified by the Conners questionn
 
 ## Methods
 
-ID: participants ID
 
-
-Gender: women (n = 57), men (n = 39)
-Adhd subtype : hyperactive (n = 2), inattentive (n = 48), mixed (n = 46)
+ * Women (n = 57) 
+ * Men (n = 39)
+ * Adhd subtype : hyperactive (n = 2), inattentive (n = 48), mixed (n = 46)
 
 
 Conners questionnaire : standardized questionnaire. Comprizes 66 items about ADHD symptoms and behaviors. Answers are given using a Likert scale (0 = not at all/never and 3 = very often/very frequent). The items are compiled into 4 scales;
@@ -55,7 +54,7 @@ Finally, the main analysis can be found in the [main_analyses.ipynb](https://git
 
 We were interested in gender differences and ADHD subtype differences, so we started by plotting their scalp distribution. White electrodes indicate the significant differences (computed via Mann-Whitney non parametric test and corrected with Bonferroni).
 
-Here is the scalp plot showing gender differences. 
+Here is the scalp plot showing sex differences. 
 
 ![](images/eeg_gender.PNG)
 
@@ -84,7 +83,7 @@ Second, we tried to predict ADHD subtype again, this time using Conners scale (c
 | Conners Scale | Acccuracy = 73.68%, p = 0.009| Accuracy: 73.68%, p = 0.019|
 | IVA-II        | Accuracy = 52.6%, p = 0.67   | Accuracy = 52.6%, p = 0.76 |
 
-Finally, we also tried predicting gender according to Eeg distribution. This classification yielded the best results, with and without PCA.
+Finally, we also tried predicting sex according to Eeg distribution. This classification yielded the best results, with and without PCA.
 
 | Feature| Knn result using PCA         | Knn result without PCA     |
 | :-----:|:----------------------------:| :-------------------------:|
@@ -140,10 +139,15 @@ Please make sure to see the	[requirements_week3deliverable.txt](https://github.c
 
 ## References
 1. [Galarnyk, M. (2017, December 4th). PCA using Python (scikit-learn). Retrieved from https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60](https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60)
-2. [La Malfa, G., Lassi, S., Bertelli, M., Pallanti, S., Albertini, G. (2008) Detecting attention-deficit/hyperactivity disorder (ADHD) in adults with intellectual disability The use of Conners' Adult ADHD Rating Scales (CAARS). Res Dev Disabil.29(2):158‐164. doi:10.1016/j.ridd.2007.02.002](https://www.sciencedirect.com/science/article/pii/S0891422207000200?via%3Dihub)
-3. [Navlani, A. (2018, August 2nd). KNN Classification using Scikit-learn. Retrieved from https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn](https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn)
-4. [Sandford, J. A., & Turner, A. (2000). Integrated visual and auditory continuous performance test manual. Richmond, VA: Brain Train.](https://www.braintrain.com/iva2/) 
-3. [Sharma, A. (2020, January 1st). Principal Component Analysis in Python. Retrieved from https://www.datacamp.com/community/tutorials/principal-component-analysis-in-python](https://www.datacamp.com/community/tutorials/principal-component-analysis-in-python)
-4. [Wilens, T. E., & Spencer, T. J. (2010). Understanding attention-deficit/hyperactivity disorder from childhood to adulthood. Postgraduate medicine, 122(5), 97–109. https://doi.org/10.3810/pgm.2010.09.2206](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3724232/)
-4. [Volkow, N. D., & Swanson, J. M. (2013). Clinical practice: Adult attention deficit-hyperactivity disorder. The New England journal of medicine, 369(20), 1935–1944. https://doi.org/10.1056/NEJMcp1212625](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4827421/)
+2. [Harel, Y. (2020, May 25). hytools. Retrieved from  https://github.com/hyruuk/hytools/tree/master/hytools](https://github.com/hyruuk/hytools/tree/master/hytools)
+3. [Hasler, R., Perroud, N., Meziane, H. B., et al. (2016). Attention-related EEG markers in adult ADHD. Neuropsychologia.87:120‐133. doi:10.1016/j.neuropsychologia.2016.05.008](https://pubmed.ncbi.nlm.nih.gov/27178310/)
+4. [Ingram, S., Hechtman, L. & Morgenstern, G. (1999). Outcome issues in ADHD: Adolescent an dadult long-term outcome. Developmental Disabilities Research Reviews.5(3), 243-250. https://doi.org/10.1002/(SICI)1098-2779(1999)5:3<243::AID-MRDD11>3.0.CO;2-D](https://onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291098-2779%281999%295%3A3%3C243%3A%3AAID-MRDD11%3E3.0.CO%3B2-D)4. 
+5. [La Malfa, G., Lassi, S., Bertelli, M., Pallanti, S., Albertini, G. (2008) Detecting attention-deficit/hyperactivity disorder (ADHD) in adults with intellectual disability The use of Conners' Adult ADHD Rating Scales (CAARS). Res Dev Disabil.29(2):158‐164. doi:10.1016/j.ridd.2007.02.002](https://www.sciencedirect.com/science/article/pii/S0891422207000200?via%3Dihub)
+6. [Navlani, A. (2018, August 2nd). KNN Classification using Scikit-learn. Retrieved from https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn](https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn)
+7. [Olbrich, S., van Dinteren, R., Arns, M. (2015). Personalized Medicine: Review and Perspectives of Promising Baseline EEG Biomarkers in Major Depressive Disorder and Attention Deficit Hyperactivity Disorder. Neuropsychobiology.72(3-4):229‐240. doi:10.1159/000437435](https://pubmed.ncbi.nlm.nih.gov/26901357/)
+8. [Sandford, J. A., & Turner, A. (2000). Integrated visual and auditory continuous performance test manual. Richmond, VA: Brain Train.](https://www.braintrain.com/iva2/) 
+9. [Sharma, A. (2020, January 1st). Principal Component Analysis in Python. Retrieved from https://www.datacamp.com/community/tutorials/principal-component-analysis-in-python](https://www.datacamp.com/community/tutorials/principal-component-analysis-in-python)
+10. [Sibley, M. H., Pelham, W. E., Jr., Molina, B. S. G., Gnagy, E. M., Waschbusch, D. A., Garefino, A. C., . . . Karch, K. M. (2012). Diagnosing ADHD in adolescence. Journal of Consulting and Clinical Psychology, 80(1), 139-150. http://dx.doi.org/10.1037/a0026577](https://psycnet.apa.org/fulltext/2011-28648-001.html)
+11. [Wilens, T. E., & Spencer, T. J. (2010). Understanding attention-deficit/hyperactivity disorder from childhood to adulthood. Postgraduate medicine, 122(5), 97–109. https://doi.org/10.3810/pgm.2010.09.2206](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3724232/)
+12. [Volkow, N. D., & Swanson, J. M. (2013). Clinical practice: Adult attention deficit-hyperactivity disorder. The New England journal of medicine, 369(20), 1935–1944. https://doi.org/10.1056/NEJMcp1212625](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4827421/)
 
