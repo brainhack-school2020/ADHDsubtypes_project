@@ -1,18 +1,20 @@
-![](images/eeg_general.PNG)
+
 
 # ADHDsubtypes_project
+
+![](images/eeg_general.PNG)
 
 This project was conducted for BrainHack school 2020 by Béatrice De Koninck & Pénélope Pelland-Goulet.
 
 ## Background
 
-Attention deficit/hyperactivity disorder (ADHD) is one of the most common neurodevelopmental disorders among children and adolescents. It manifests itself through a variety of cognitive and behavioral symptoms, such as (but not limited to) hyperactivity, lack attention, impulsivity, lack of inhibition and diminished working memory. Long-term follow-up studies revealed that in 40 to 60% of children with ADHD, the disorder persists into adulthood ([American Psychiatric Association, 2012](https://psycnet.apa.org/fulltext/2011-28648-001.html); [Hechtman, L., 1999](https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1098-2779(1999)5:3%3C243::AID-MRDD11%3E3.0.CO;2-D); [Klein, RG et al. 2012](https://pubmed.ncbi.nlm.nih.gov/23070149/)). Subtype classification of ADHD has not reach consensus whithin the litterature and research on the correlates of ADHD subtypes show incoherent findings. The most common grouping of adhd subtypes (which is also the DSM categorization) are (1) inattentive, (2) impulsive/Hyperactive and (3) mixed. Those subtypes are for the majority based on criteria derived from behavioral and-self-report data and lack of neurophysiological assessment is prominent([Hegerl et al. 2016](https://pubmed.ncbi.nlm.nih.gov/27178310/); [Olbrich, Dinteren & Arns, 2015](https://pubmed.ncbi.nlm.nih.gov/26901357/)).
+Attention deficit/hyperactivity disorder (ADHD) is one of the most common neurodevelopmental disorders among children and adolescents ([Volkow, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4827421/)). It manifests itself through a variety of cognitive and behavioral symptoms, such as (but not limited to) hyperactivity, lack attention, impulsivity, lack of inhibition and diminished working memory ([Wilens, 2010](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3724232/)). Long-term follow-up studies revealed that in 40 to 60% of children with ADHD, the disorder persists into adulthood ([American Psychiatric Association, 2012](https://psycnet.apa.org/fulltext/2011-28648-001.html); [Hechtman, L., 1999](https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1098-2779(1999)5:3%3C243::AID-MRDD11%3E3.0.CO;2-D); [Klein, RG et al. 2012](https://pubmed.ncbi.nlm.nih.gov/23070149/)). Subtype classification of ADHD has not reach consensus whithin the litterature and research on the correlates of ADHD subtypes show incoherent findings. The most common grouping of adhd subtypes (which is also the DSM categorization) are (1) inattentive, (2) impulsive/Hyperactive and (3) mixed. Those subtypes are for the majority based on criteria derived from behavioral and-self-report data and lack of neurophysiological assessment is prominent([Hegerl et al. 2016](https://pubmed.ncbi.nlm.nih.gov/27178310/); [Olbrich, Dinteren & Arns, 2015](https://pubmed.ncbi.nlm.nih.gov/26901357/)).
 
 ## Project definition
 
-This project will aim to investigate the detection of subtypes of ADHD from the possible associations between different types of measurements, pairing common behavioral and self-reporting measures to electrophysiological (EEG) data. More specifically, Principal components analysis (PCA) will be applied in order to achieve dimension reduction and k-nearest neighbor clustering will be used to predict the DSM ADHD subtypes. In addition, an investigation of the predictive capacity of our 3 data types will be made, as well as observations about the potential prediction of gender using our dataset.
+This project will aim to investigate the prediction potential of subtypes of ADHD between different types of measurements, those being behavioral measures, self-reporting measures and electrophysiological (EEG) data. More specifically, Principal components analysis (PCA) will be applied in order to achieve dimension reduction and k-nearest neighbor clustering will be used to predict the DSM ADHD subtypes according to each data type. An investigation of the predictive capacity of our 3 data types will be made, as well as observations about the potential prediction of gender using our dataset. For eeg data, an supplementary investigation will be conducted to compare prediction potential of ADHD subtypes according to electrode pools (paired according to brain regions) for brain oscillations of interest (measuring sepctral power). 
 
-As well as learning all the tools and analysis that are listed at the bottom of this README, one of our goals was to create notebooks that is easy to use, and that can be easily understood and modified by people with little coding experience. In order to do this, we included very specific and detailed instructions and comments in our notebooks, educating the viewer on the code, the functions, the plots, and the results.
+As well as learning all the tools and analysis that are listed at the bottom of this README, one of our goals was to create notebooks that are easy to use, and that can be easily understood and modified by people with little coding experience. In order to do this, we included very specific and detailed instructions and comments in our notebooks, educating the viewer on the code, the functions, the plots, and the results.
 
 ## Data
 
@@ -21,24 +23,27 @@ For classification comparison, ADHD subtypes identified by the Conners questionn
 
 ## Methods
 
-
+**Sample** :
  * Women (n = 57) 
  * Men (n = 39)
  * Adhd subtype : hyperactive (n = 2), inattentive (n = 48), mixed (n = 46)
 
+### Types of measures 
 
-Conners questionnaire : standardized questionnaire. Comprizes 66 items about ADHD symptoms and behaviors. Answers are given using a Likert scale (0 = not at all/never and 3 = very often/very frequent). The items are compiled into 4 scales;
+**Conners questionnaire** : standardized questionnaire. Comprizes 66 items about ADHD symptoms and behaviors. Answers are given using a Likert scale (0 = not at all/never and 3 = very often/very frequent). The items are compiled into 4 scales;
 
    * inattention/memory (IM)
    * hyperactivity/restlessness (HR)
    * impulsivity/emotional lability (IE)
    * problems with self concept (SC) (refers to self esteem).
 
-These four scores are used as the 4 self report symptoms measures. Test-retest correlation for 18-29 years old ranges from 0,8 to 0,92 depending on items.      
+  These four scores are used as the 4 self report symptoms measures. Test-retest correlation for 18-29 years old ranges from  0,8 to 0,92 depending on items.           
 
-IVA-II : Behavioral test. Participants are presented with visual and auditive stimuli (numbers). If the stimulus is 1, whether it is visual or auditive, subjects must click as quickly as possible. If the stimulus is 2, whether it is visual or auditive, subjects must refrain from clickling. Stimuli are presented in a randomized order and at random time. 2 main scales are extracted, comprising 2 subscales each. 1st main scale is Attention Quotient (AQ) and its subscales are AQ auditive and AQ visual. 2nd main scale is Response Control Quotient (RCQ) and its subscales are RCQ auditive and RCQ visual.
+**IVA-II** : Behavioral test. Participants are presented with visual and auditive stimuli (numbers). If the stimulus is 1, whether it is visual or auditive, subjects must click as quickly as possible. If the stimulus is 2, whether it is visual or auditive, subjects must refrain from clickling. Stimuli are presented in a randomized order and at random time. 2 main scales are extracted, comprising 2 subscales each. 1st main scale is Attention Quotient (AQ) and its subscales are AQ auditive and AQ visual. 2nd main scale is Response Control Quotient (RCQ) and its subscales are RCQ auditive and RCQ visual.
 
-Electroencephalography : 19 electrodes caps were used, positioned according to the 10-20 international system and referenced to both ear lobes. Recordings lasted 5 minutes, were participants were instructed to be as still as possible and to keep their eyes opened. The Mitsar System 201 and WinEEG (Mitast) softwares were used for recording. Test-retest and split-half correlations were higher than 0,9.
+**Electroencephalography (EEG)** : 19 electrodes caps were used, positioned according to the 10-20 international system and referenced to both ear lobes. Recordings lasted 5 minutes, were participants were instructed to be as still as possible and to keep their eyes opened. The Mitsar System 201 and WinEEG (Mitast) softwares were used for recording. Test-retest and split-half correlations were higher than 0,9.
+
+### Analyses files
 
 All of these data were first preprocessed using [preprocessing.py](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/preprocessing.py) and [pre_preprocess_analysis.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/pre_preprocess_analysis.ipynb).
 
@@ -47,8 +52,6 @@ Then, data description and visualization was done in the [Viz.ipynb](https://git
 Then, eeg scalp plots were created in the [Scalp_Plots.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Scalp_Plots.ipynb), where statistical tests were also computed on eeg data.
 
 Finally, the main analysis can be found in the [main_analyses.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/main_analyses.ipynb) file. They consist of Principal Component Analysis, a dimension reduction technique that was applied to the 3 types of data in order to extract possible pertinent features that were later used in the classification of ADHD subtypes and gender. Classification was made using a k-nearest neighbors method, with and without PCA, in order to investigate the effect of PCAs on classification of gender and ADHD.
-
-
 
 ## Results
 
@@ -73,7 +76,7 @@ First, we tried to predict ADHD subtype (inattentive vs combined) using eeg data
 | Frontal         | Accuracy = 36.84%, p = 0.74| Accuracy = 26.3%, p = 0.89 |
 | Parietal        | Accuracy = 52.6%, p = 0.94 | Accuracy = 36.8%, p = 0.396|
 
-These results might not be surprising, considering PCA resulted in very similar principal components which are hard to distinguish, for all electrode pools.
+These results might not be surprising, considering PCA resulted in very similar principal components which are hard to distinguish, for all electrode pools. Here's an example of 2D visualization of PCA, on the frontal electrode pool.
 ![](images/PCA_FRONTAL.png)
 
 Second, we tried to predict ADHD subtype again, this time using Conners scale (cognitive data) and IVA-II (behavioral data) separately, with and without PCA. Conners scale could predict ADHD subtype with a precision of 73,68%, with or without PCA. IVA-II classificaiton was not significally higher than chance level (50%).
@@ -118,7 +121,6 @@ This [deliverable](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_proj
 
 Please make sure to see the	[requirements_week3deliverable.txt](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/requirements_week3deliverable.txt), to pull [Data](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/tree/master/Data) file (with all the necessary files) and follow instruction in the notebook (linked). The excel_files folder has to be moved from the Data folder to the same directory as the notebook, in order for the path to stay the same. 
 
-
 ## Progress overview
 
 * As of may 26 2020; the data has been preprocessed and organized into pandas dataframes. 
@@ -135,7 +137,6 @@ Please make sure to see the	[requirements_week3deliverable.txt](https://github.c
 * [Scalp_Plots.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Scalp_Plots.ipynb) : jupyter notebook for scalp plots visualization and stastitical analysis
 * [preprocessing.py](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/preprocessing.py) : File with all functions needed to run all the notebooks created
 * [requirement.txt](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/requirement.txt) : libraries required for this project
-
 
 ## References
 1. [Galarnyk, M. (2017, December 4th). PCA using Python (scikit-learn). Retrieved from https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60](https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60)
