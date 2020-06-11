@@ -20,7 +20,7 @@ In order to reproduce those same analysis on your own computer, you will need to
 1. Clone the repo to your computer: git clone https://github.com/brainhack-school2020/ADHDsubtypes_project.git
 2. You will need Python and Jupyter Notebook. 
 * Python  *(this was based on 3.7.6 version and used via *miniconda*). For Python installation tutorials, refer to either [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) or [pip](https://docs.python.org/3/using/index.html)
-* Jupyter NoteBook *[Installation documentation](https://jupyter.org/install)
+* Jupyter NoteBook [Installation documentation](https://jupyter.org/install)
 3. Install the packages listed in the [requirements.txt](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/requirement.txt) file. 
 To install the packages required via conda follow these instructions based on this [Documentation](https://docs.anaconda.com/anaconda/user-guide/tasks/install-packages/). 
 For installing packages rather via pip you can refer to [this](https://packaging.python.org/tutorials/installing-packages/) instead.
