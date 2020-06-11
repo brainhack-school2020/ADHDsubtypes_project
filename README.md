@@ -39,6 +39,15 @@ IVA-II : Behavioral test. Participants are presented with visual and auditive st
 
 Electroencephalography : 19 electrodes caps were used, positioned according to the 10-20 international system and referenced to both ear lobes. Recordings lasted 5 minutes, were participants were instructed to be as still as possible and to keep their eyes opened. The Mitsar System 201 and WinEEG (Mitast) softwares were used for recording. Test-retest and split-half correlations were higher than 0,9.
 
+All of these data were first preprocessed using [preprocessing.py](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/preprocessing.py) and [pre_preprocessing.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/pre_preprocessing.ipynb).
+
+Then, data description and visualization was done in the [Viz.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Viz.ipynb) file. 
+
+Then, eeg scalp plots were created in the [Scalp_Plots.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Scalp_Plots.ipynb), where statistical tests were also computed on eeg data.
+
+Finally, the main analysis can be found in the [data_exploration.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/data_exploration.ipynb) file. They consist of Principal Component Analysis, a dimension reduction technique that was applied to the 3 types of data in order to extract possible pertinent features that were later used in the classification of ADHD subtypes and gender. Classification was made using a k-nearest neighbors method, with and without PCA, in order to investigate the effect of PCAs on classification of gender and ADHD.
+
+
 
 ## Results
 
