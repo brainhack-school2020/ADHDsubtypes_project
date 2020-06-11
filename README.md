@@ -5,6 +5,7 @@
 ![](images/eeg_general.PNG)
 
 This project was conducted for BrainHack school 2020 by Béatrice De Koninck & Pénélope Pelland-Goulet.
+We are both PhD students at Université de Montréal. Béatrice's research focuses on non-invasive brain stimulation techniques (NIBS) to modulate brain activity of patients with disorder consciousness. Prior to Brainhack school she had experience with EEG data processing and analysis, mainly using Brainstorm, but also knew a little bit of python and R. Pénélope's research focuses on high-school/college transition for students with ADHD and neuropsychological assessments. She has some experience in machine learning, but never coded before Brainhack school.
 
 As well as learning all the tools and analysis that are listed at the bottom of this README, one of our goals was to create notebooks that are easy to use, and that can be easily understood and modified by people with little coding experience. In order to do this, we included very specific and detailed instructions and comments in our notebooks, educating the viewer on the code, the functions, the plots, and the results.
 In order to reproduce those same analysis on your own computer, you will need to follow these steps:
