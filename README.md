@@ -8,6 +8,13 @@ This project was conducted for BrainHack school 2020 by Béatrice De Koninck & P
 We are both PhD students at Université de Montréal. Béatrice's research focuses on non-invasive brain stimulation techniques (NIBS) to modulate brain activity of patients with disorder consciousness. Prior to Brainhack school she had experience with EEG data processing and analysis, mainly using Brainstorm, but also knew a little bit of python and R. Pénélope's research focuses on high-school/college transition for students with ADHD and neuropsychological assessments. She has some experience in machine learning, but never coded before Brainhack school.
 
 As well as learning all the tools and analysis that are listed at the bottom of this README, one of our goals was to create notebooks that are easy to use, and that can be easily understood and modified by people with little coding experience. In order to do this, we included very specific and detailed instructions and comments in our notebooks, educating the viewer on the code, the functions, the plots, and the results.
+
+## Abstract
+
+ADHD subtypes are a controversial aspect of ADHD literature. Most subtypes classifications are based on behavioral and cognitive data but lack biomarkers.
+Using a multimodal dataset comprised of EEG data as well as self-reported symptoms and behavioral data, we tried to predict the DSM subtypes of each of our 96 participants. Since ADHD has been noted to present itself differently across sexes, we also tried to predict sex. At-rest eeg data and behavioral data proved to be poor predictors of the DSM subtypes. However, self-reported symptoms were a rich predictor of ADHD subtype. Additionally, predicting sex using EEG data yielded the highest decoding accuracies.
+
+## Installation
 In order to reproduce those same analysis on your own computer, you will need to follow these steps:
 1. Clone the repo to your computer: git clone https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project.git
 2. You will need Python and Jupyter Notebook. If you do not already use Jupyter Notebooks and Python, you can download both of them, as well as other useful tools by installing [Anaconda Navigator](https://docs.anaconda.com/anaconda/install/)
