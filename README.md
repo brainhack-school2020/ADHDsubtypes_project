@@ -67,7 +67,7 @@ Finally, the main analysis can be found in the [main_analyses.ipynb](https://git
 
 ## Results
 
-We were interested in gender differences and ADHD subtype differences, so we started by plotting their scalp distribution. White electrodes indicate the significant differences (computed via Mann-Whitney non parametric test and corrected with Bonferroni).
+We were interested in sex differences and ADHD subtype differences, so we started by plotting their scalp distribution. White electrodes indicate the significant differences (computed via Mann-Whitney non parametric test and corrected with Bonferroni).
 
 Here is the scalp plot showing sex differences. 
 
@@ -145,11 +145,11 @@ Please make sure to see the	[requirements_week3deliverable.txt](https://github.c
 
 **Deliverables** :
 
-* [main_analyses.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/main_analyses.ipynb): jupyter notebook of all data wrangling, some interactive data visualization, and complete PCAs, KNN analyses (with comparisons of KNN without PCAs) on all 3 types of data
-* [Viz.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Viz.ipynb) : jupyter notebook of all the visualisation and descriptive stats made for all 3 datasets  
-* [Scalp_Plots.ipynb](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/Scalp_Plots.ipynb) : jupyter notebook for scalp plots visualization and stastitical analysis (section with topography maps with significance masks for electrode comparisons). 
-* [preprocessing.py](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/preprocessing.py) : File with all functions needed to run all the notebooks created
-* [requirement.txt](https://github.com/brainhack-school2020/SNF_ADHDsubtypes_project/blob/master/requirement.txt) : libraries required for this project
+* [main_analyses.ipynb](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/main_analyses.ipynb): jupyter notebook of all data wrangling, some interactive data visualization, and complete PCAs, KNN analyses (with comparisons of KNN without PCAs) on all 3 types of data
+* [Viz.ipynb](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/Viz.ipynb) : jupyter notebook of all the visualisation and descriptive stats made for all 3 datasets  
+* [Scalp_Plots.ipynb](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/Scalp_Plots.ipynb) : jupyter notebook for scalp plots visualization and stastitical analysis (section with topography maps with significance masks for electrode comparisons). 
+* [preprocessing.py](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/preprocessing.py) : File with all functions needed to run all the notebooks created
+* [requirement.txt](https://github.com/brainhack-school2020/ADHDsubtypes_project/blob/master/requirement.txt) : libraries required for this project
 
 ## References
 1. [Galarnyk, M. (2017, December 4th). PCA using Python (scikit-learn). Retrieved from https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60](https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60)
